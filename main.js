@@ -4,15 +4,15 @@ let correctGuesses = 0
 let word = "HELLO";
 let answerArray = word.split("")
 let input = "";
-console.log(answerArray)
-console.log(input)
+// console.log(answerArray)
+// console.log(input)
 // console.log(answerArray[3])
 // console.log(answerArray.indexOf("E"))
 
 //function to submit letters
 const submitLetters = () => {
     input = document.getElementById("userInput").value.toUpperCase()
-    console.log("click")
+    // console.log("click")
     console.log(input)
     if (input !== "") {
         checkForLetters(input)
@@ -38,7 +38,7 @@ const checkForWin = () => {
     }
 }
     
-    // function to compare user input to answer array
+// function to compare user input to answer array
 const checkForLetters = (input) => {
     let foundAnswer = []
     for (let i = 0; i < answerArray.length; i++) {
@@ -52,11 +52,13 @@ const checkForLetters = (input) => {
             document.getElementById("returnResult").innerHTML = `Correct! You got ${foundAnswer.length} letters`
         }
     }
-    if (answerArray.indexOf(input) === -1) {
-        console.log("not found")
-        userLives--
-        document.getElementById("userLives").innerHTML = userLives
-        document.getElementById("returnResult").innerHTML = `That letter is incorrect. Lose 1 life.`
+    if (foundAnswer.length === 0) {
+        if (answerArray.indexOf(input) === -1) {
+            console.log("not found")
+            userLives--
+            document.getElementById("userLives").innerHTML = userLives
+            document.getElementById("returnResult").innerHTML = `That letter is incorrect. Lose 1 life.`
+        }
     }
     console.log(foundAnswer)
     checkForWin()
@@ -65,10 +67,11 @@ const checkForLetters = (input) => {
 //function to reset game
 
 document.getElementById("reset").addEventListener("click", function() {
-        console.log("reset")
+        // console.log("reset")
         userLives = 6;
         document.getElementById("userLives").innerHTML = userLives
         correctGuesses = 0
+        answerArray = word.split("")
         for (let i = 0; i < letterBoxes.length; i++) {
             letterBoxes[i].innerHTML = "&#10240;"
         }
@@ -80,8 +83,9 @@ document.getElementById("submit").addEventListener("click", function() {
     submitLetters()
 })
 
+// Get user input when enter is pressed
 document.getElementById("userInput").addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         submitLetters()
     }
-    });
+});
