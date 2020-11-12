@@ -3,18 +3,25 @@ let correctGuesses = 3
 
 let word = "HELLO";
 let answerArray = word.split("")
-let input = "F";
+let input = "";
 console.log(answerArray)
 console.log(input)
 // console.log(answerArray[3])
 // console.log(answerArray.indexOf("E"))
 
 // Get user input on submit button click
-// document.getElementById("submit").addEventListener("click", function() {
-    //     input = document.getElementById("userInput").value
-    // })
+document.getElementById("submit").addEventListener("click", function() {
+        input = document.getElementById("userInput").value
+        console.log("click")
+        console.log(input)
+    })
 
-    // function to check for win
+// function to get letterBox divs and change them
+let letterBoxes = []
+letterBoxes = document.getElementsByClassName("letterBox")
+console.log(letterBoxes)
+
+// function to check for win
 const checkForWin = () => {
     if (correctGuesses === answerArray.length) {
         console.log("you win")
