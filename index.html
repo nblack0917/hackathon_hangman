@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
+    <title>Hackathon Hangman</title>
+</head>
+<body>
+    <h1>Hangman</h1>
+    <hr>
+    <section class="game">
+        <div class="topContainer">
+            <div id="hangmanImage">
+                <img src="assets/hangman.png" alt="An Image of The Classic Hangman Game">
+            </div>
+            <div id="livesContainer">
+                <div id="livesHeader">Lives:</div>
+                <div id="userLives">6</div>
+            </div>
+        </div>
+        <span id="answerContainer">
+            <div class="letterBox">H</div>
+            <div class="letterBox">E</div>
+            <div class="letterBox">L</div>
+            <div class="letterBox">L</div>
+            <div class="letterBox">O</div>
+        </span>
+        <input type="text" maxlength="1" id="userInput">
+        <br>
+        <button id="submit">Submit</button>
+        <div id="returnResult"></div>
+        <button id="reset">Reset</button>
+    </section>
+</body>
+</html>
