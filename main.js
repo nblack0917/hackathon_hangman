@@ -24,7 +24,7 @@ let letterBoxes = []
 letterBoxes = document.getElementsByClassName("letterBox")
 // console.log(letterBoxes)
 for (let i = 0; i < letterBoxes.length; i++) {
-    letterBoxes[i].innerHTML = "⠀"
+    letterBoxes[i].innerHTML = "&#10240;"
 }
 
 // function to check for win
@@ -70,7 +70,7 @@ document.getElementById("reset").addEventListener("click", function() {
         document.getElementById("userLives").innerHTML = userLives
         correctGuesses = 0
         for (let i = 0; i < letterBoxes.length; i++) {
-            letterBoxes[i].innerHTML = "⠀"
+            letterBoxes[i].innerHTML = "&#10240;"
         }
         document.getElementById("returnResult").innerHTML = null
     })
