@@ -24,7 +24,7 @@ let letterBoxes = []
 letterBoxes = document.getElementsByClassName("letterBox")
 // console.log(letterBoxes)
 for (let i = 0; i < letterBoxes.length; i++) {
-    letterBoxes[i].innerHTML = "_"
+    letterBoxes[i].innerHTML = "⠀"
 }
 
 // function to check for win
@@ -47,6 +47,7 @@ const checkForLetters = (input) => {
             console.log("found");
             foundAnswer.push(i);
             letterBoxes[i].innerHTML = input
+            answerArray[i] = null;
             correctGuesses++;
             document.getElementById("returnResult").innerHTML = `Correct! You got ${foundAnswer.length} letters`
         }
@@ -63,14 +64,15 @@ const checkForLetters = (input) => {
 
 //function to reset game
 
-    document.getElementById("reset").addEventListener("click", function() {
+document.getElementById("reset").addEventListener("click", function() {
         console.log("reset")
         userLives = 6;
         document.getElementById("userLives").innerHTML = userLives
         correctGuesses = 0
         for (let i = 0; i < letterBoxes.length; i++) {
-            letterBoxes[i].innerHTML = "_"
+            letterBoxes[i].innerHTML = "⠀"
         }
+        document.getElementById("returnResult").innerHTML = null
     })
 
 // Get user input on submit button click
