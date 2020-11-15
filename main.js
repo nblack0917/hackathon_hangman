@@ -47,6 +47,7 @@ const checkForLetters = (input) => {
             console.log("found");
             foundAnswer.push(i);
             letterBoxes[i].innerHTML = input
+            letterBoxes[i].style.border = "none";
             answerArray[i] = null;
             correctGuesses++;
             document.getElementById("returnResult").innerHTML = `Correct! You got ${foundAnswer.length} letters`
